@@ -1,30 +1,26 @@
 import { ChangeEvent, useState, FormEvent } from 'react';
 
 const Uncontrolled = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [values, setValues] = useState({ firstName: '', lastName: '' });
 
-  const handleChangeFirstName = ({
-    target: { value },
+  const handleChange = ({
+    target: { name, value },
   }: ChangeEvent<HTMLInputElement>) => {
-    setFirstName(value);
-  };
-
-  const handleChangeLastName = ({
-    target: { value },
-  }: ChangeEvent<HTMLInputElement>) => {
-    setLastName(value);
+    setValues({
+      ...values,
+      [name]: value,
+    });
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(`${firstName} ${lastName}`);
+    console.log(`${values.firstName} ${values.lastName}`);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" onChange={handleChangeFirstName} />
-      <input type="text" onChange={handleChangeLastName} />
+      <input type="text" name="firstName" onChange={handleChange} />
+      <input type="text" name="lastName" onChange={handleChange} />
       <button>Submit</button>
     </form>
   );
