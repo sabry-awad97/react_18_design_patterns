@@ -1,8 +1,8 @@
 import './App.css';
-import Controlled from './components/controlled/Controlled';
+import Button from './components/Button';
 
 function App() {
-  return <Controlled />;
+  return <Button> Click me</Button>;
 }
 
 export default App;
