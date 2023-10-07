@@ -1,19 +1,8 @@
 import './App.css';
-import Fetch from './components/Fetch';
-
-interface Item {
-  id: number;
-  name: string;
-}
+import Uncontrolled from './components/uncontrolled/Uncontrolled';
 
 function App() {
-  return (
-    <Fetch<Item[]> url="https://jsonplaceholder.typicode.com/users">
-      {data => (
-        <ul>{data && data.map(item => <li key={item.id}>{item.name}</li>)}</ul>
-      )}
-    </Fetch>
-  );
+  return <Uncontrolled />;
 }
 
 export default App;
