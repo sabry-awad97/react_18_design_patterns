@@ -5,12 +5,26 @@ interface Props {
 }
 
 const Button: FC<Props> = ({ children }) => {
-  const handleClick: MouseEventHandler<HTMLButtonElement> = e => {
-    console.log(e instanceof MouseEvent); // false
-    console.log(e.nativeEvent instanceof MouseEvent); // true
+  const handleEvent: MouseEventHandler<HTMLButtonElement> = e => {
+    switch (e.type) {
+      case 'click':
+        console.log('clicked');
+        break;
+
+      case 'dblclick':
+        console.log('double clicked');
+        break;
+
+      default:
+        console.warn(`No case for event type "${e.type}"`);
+    }
   };
 
-  return <button onClick={handleClick}>{children}</button>;
+  return (
+    <button onClick={handleEvent} onDoubleClick={handleEvent}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
