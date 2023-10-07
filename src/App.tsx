@@ -1,8 +1,8 @@
 import './App.css';
-import Geolocation from './components/Geolocation';
+import GeolocationContainer from './components/GeolocationContainer';
 
 function App() {
-  return <Geolocation />;
+  return <GeolocationContainer />;
 }
 
 export default App;
