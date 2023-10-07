@@ -1,8 +1,8 @@
 import './App.css';
-import Button from './components/button';
+import Geolocation from './components/Geolocation';
 
 function App() {
-  return <Button>Click me!</Button>;
+  return <Geolocation />;
 }
 
 export default App;
