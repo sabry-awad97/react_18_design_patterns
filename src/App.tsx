@@ -1,7 +1,8 @@
 import './App.css';
+import Button from './components/button';
 
 function App() {
-  return <>Hello World</>;
+  return <Button>Click me!</Button>;
 }
 
 export default App;
