@@ -1,8 +1,8 @@
 import './App.css';
-import GeolocationContainer from './components/GeolocationContainer';
+import WithInnerWidth from './components/WithInnerWidth';
 
 function App() {
-  return <GeolocationContainer />;
+  return <WithInnerWidth />;
 }
 
 export default App;
