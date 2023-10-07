@@ -1,8 +1,8 @@
 import './App.css';
-import WithInnerWidth from './components/WithInnerWidth';
+import FunctionAsChild from './components/FunctionAsChild';
 
 function App() {
-  return <WithInnerWidth />;
+  return <FunctionAsChild>{() => <div>Hello, World!</div>}</FunctionAsChild>;
 }
 
 export default App;
