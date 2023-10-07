@@ -1,8 +1,8 @@
 import './App.css';
-import Button from './components/Button';
+import Focus from './components/Focus';
 
 function App() {
-  return <Button> Click me</Button>;
+  return <Focus />;
 }
 
 export default App;
