@@ -1,4 +1,5 @@
 import { ElementRef, useRef } from 'react';
+import TextInputWithRef from './TextInputWithRef';
 
 const Focus = () => {
   const inputRef = useRef<ElementRef<'input'>>(null);
@@ -9,8 +10,8 @@ const Focus = () => {
 
   return (
     <>
-      <input type="text" ref={inputRef} />
-      <button onClick={handleClick}>Set Focus</button>
+      <TextInputWithRef ref={inputRef} />
+      <button onClick={handleClick}>Focus on input</button>
     </>
   );
 };
