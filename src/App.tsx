@@ -1,8 +1,19 @@
 import './App.css';
-import FunctionAsChild from './components/FunctionAsChild';
+import Fetch from './components/Fetch';
+
+interface Item {
+  id: number;
+  name: string;
+}
 
 function App() {
-  return <FunctionAsChild>{() => <div>Hello, World!</div>}</FunctionAsChild>;
+  return (
+    <Fetch<Item[]> url="https://jsonplaceholder.typicode.com/users">
+      {data => (
+        <ul>{data && data.map(item => <li key={item.id}>{item.name}</li>)}</ul>
+      )}
+    </Fetch>
+  );
 }
 
 export default App;
