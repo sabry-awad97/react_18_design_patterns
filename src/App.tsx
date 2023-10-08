@@ -1,8 +1,14 @@
 import './App.css';
-import Focus from './components/refs/Focus';
+import Circle from './components/svg/Circle';
+import RedCircle from './components/svg/RedCircle';
 
 function App() {
-  return <Focus />;
+  return (
+    <>
+      <Circle x={40} y={40} radius={40} fill="blue" />
+      <RedCircle x={40} y={40} radius={40} />
+    </>
+  );
 }
 
 export default App;
