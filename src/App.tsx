@@ -1,8 +1,8 @@
 import './App.css';
-import Button from './components/styled-components/Button';
+import Counter from './components/anti-patterns/Counter';
 
 function App() {
-  return <Button>Click me!</Button>;
+  return <Counter initialCount={1} />;
 }
 
 export default App;
