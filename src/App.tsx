@@ -1,5 +1,5 @@
 import './App.css';
-import Focus from './components/Focus';
+import Focus from './components/refs/Focus';
 
 function App() {
   return <Focus />;
