@@ -1,4 +1,4 @@
-import withInnerWidth from '../hocs/withInnerWidth';
+import withInnerWidth from '../../hocs/withInnerWidth';
 
 const WithInnerWidth = withInnerWidth(({ innerWidth }) => (
   <div>innerWidth: {innerWidth}</div>
