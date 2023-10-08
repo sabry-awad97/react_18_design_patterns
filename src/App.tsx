@@ -1,8 +1,8 @@
 import './App.css';
-import Counter from './components/anti-patterns/Counter';
+import List from './components/anti-patterns/List';
 
 function App() {
-  return <Counter initialCount={1} />;
+  return <List />;
 }
 
 export default App;
