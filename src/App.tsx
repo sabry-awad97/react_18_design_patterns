@@ -1,8 +1,8 @@
 import './App.css';
-import FontSize from './components/inline-styles/FontSize';
+import Button from './components/css-modules/Button';
 
 function App() {
-  return <FontSize />;
+  return <Button />;
 }
 
 export default App;
