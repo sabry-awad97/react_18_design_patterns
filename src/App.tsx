@@ -1,14 +1,8 @@
 import './App.css';
-import Circle from './components/svg/Circle';
-import RedCircle from './components/svg/RedCircle';
+import Button from './components/inline-styles/Button';
 
 function App() {
-  return (
-    <>
-      <Circle x={40} y={40} radius={40} fill="blue" />
-      <RedCircle x={40} y={40} radius={40} />
-    </>
-  );
+  return <Button />;
 }
 
 export default App;
