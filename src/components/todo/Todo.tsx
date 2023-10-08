@@ -10,6 +10,11 @@ const initialTodos: Todo[] = [
 const Todos: FC = () => {
   const [todoList, setTodoList] = useState<Todo[]>(initialTodos);
   const [task, setTask] = useState<string>('');
+  const [term, setTerm] = useState('');
+
+  const handleSearch = () => {
+    setTerm(task);
+  };
 
   useEffect(() => {
     console.log('Rendering <Todos />');
@@ -26,6 +31,11 @@ const Todos: FC = () => {
     setTask('');
   };
 
+  const filteredTodoList = todoList.filter((todo: Todo) => {
+    console.log('Filtering...');
+    return todo.task.toLowerCase().includes(term.toLowerCase());
+  });
+
   return (
     <>
       <input
@@ -34,7 +44,8 @@ const Todos: FC = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) => setTask(e.target.value)}
       />
       <button onClick={handleCreate}>Create</button>
-      <MemoizedList todoList={todoList} />
+      <button onClick={handleSearch}>Search</button>
+      <MemoizedList todoList={filteredTodoList} />
     </>
   );
 };
