@@ -1,8 +1,8 @@
 import './App.css';
-import Todos from './components/todo/Todo';
+import Reducer from './components/reducer/Reducer';
 
 function App() {
-  return <Todos />;
+  return <Reducer />;
 }
 
 export default App;
