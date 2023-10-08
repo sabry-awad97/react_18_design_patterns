@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, ChangeEvent } from 'react';
+import { FC, useState, useEffect, ChangeEvent, useMemo } from 'react';
 import { Todo } from './List';
 import MemoizedList from './MemoizedList';
 
@@ -31,10 +31,14 @@ const Todos: FC = () => {
     setTask('');
   };
 
-  const filteredTodoList = todoList.filter((todo: Todo) => {
-    console.log('Filtering...');
-    return todo.task.toLowerCase().includes(term.toLowerCase());
-  });
+  const filteredTodoList = useMemo(
+    () =>
+      todoList.filter((todo: Todo) => {
+        console.log('Filtering...');
+        return todo.task.toLowerCase().includes(term.toLowerCase());
+      }),
+    [term, todoList]
+  );
 
   return (
     <>
