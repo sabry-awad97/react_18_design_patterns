@@ -1,8 +1,8 @@
 import './App.css';
-import AtomicCSSModules from './components/css-modules/AtomicCSSModules';
+import Button from './components/styled-components/Button';
 
 function App() {
-  return <AtomicCSSModules />;
+  return <Button>Click me!</Button>;
 }
 
 export default App;
