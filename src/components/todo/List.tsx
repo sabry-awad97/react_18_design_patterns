@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import Task from './Task';
+import MemoizedTask from './MemoizedTask';
 
 export type Todo = {
   id: number;
@@ -18,7 +18,7 @@ const List: FC<Props> = ({ todoList }) => {
   return (
     <ul>
       {todoList.map((todo: Todo) => (
-        <Task key={todo.id} id={todo.id} task={todo.task} />
+        <MemoizedTask key={todo.id} id={todo.id} task={todo.task} />
       ))}
     </ul>
   );

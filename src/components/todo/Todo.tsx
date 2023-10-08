@@ -1,5 +1,6 @@
 import { FC, useState, useEffect, ChangeEvent } from 'react';
-import List, { Todo } from './List';
+import { Todo } from './List';
+import MemoizedList from './MemoizedList';
 
 const initialTodos: Todo[] = [
   { id: 1, task: 'Go shopping' },
@@ -33,7 +34,7 @@ const Todos: FC = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) => setTask(e.target.value)}
       />
       <button onClick={handleCreate}>Create</button>
-      <List todoList={todoList} />
+      <MemoizedList todoList={todoList} />
     </>
   );
 };
