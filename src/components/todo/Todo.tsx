@@ -46,6 +46,14 @@ const Todos: FC = () => {
     [todoList]
   );
 
+  const printTodoList = useCallback(() => {
+    console.log('Changing todoList', todoList);
+  }, [todoList]);
+
+  useEffect(() => {
+    printTodoList();
+  }, [todoList, printTodoList]);
+
   const filteredTodoList = useMemo(
     () =>
       todoList.filter((todo: Todo) => {
