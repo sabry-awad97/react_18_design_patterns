@@ -1,8 +1,8 @@
 import './App.css';
-import Button from './components/css-modules/Button';
+import AtomicCSSModules from './components/css-modules/AtomicCSSModules';
 
 function App() {
-  return <Button />;
+  return <AtomicCSSModules />;
 }
 
 export default App;

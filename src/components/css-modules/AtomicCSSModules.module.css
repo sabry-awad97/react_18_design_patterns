@@ -1,0 +1,11 @@
+.mb0 {
+  margin-bottom: 0;
+}
+
+.fw6 {
+  font-weight: 600;
+}
+
+.title {
+  composes: mb0 fw6;
+}
