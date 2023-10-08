@@ -1,8 +1,8 @@
 import './App.css';
-import List from './components/anti-patterns/List';
+import Todos from './components/todo/Todo';
 
 function App() {
-  return <List />;
+  return <Todos />;
 }
 
 export default App;
