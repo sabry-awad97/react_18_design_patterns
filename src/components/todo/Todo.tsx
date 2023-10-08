@@ -1,4 +1,11 @@
-import { FC, useState, useEffect, ChangeEvent, useMemo } from 'react';
+import {
+  FC,
+  useState,
+  useEffect,
+  ChangeEvent,
+  useMemo,
+  useCallback,
+} from 'react';
 import { Todo } from './List';
 import MemoizedList from './MemoizedList';
 
@@ -31,10 +38,13 @@ const Todos: FC = () => {
     setTask('');
   };
 
-  const handleDelete = (taskId: number) => {
-    const newTodoList = todoList.filter((todo: Todo) => todo.id !== taskId);
-    setTodoList(newTodoList);
-  };
+  const handleDelete = useCallback(
+    (taskId: number) => {
+      const newTodoList = todoList.filter((todo: Todo) => todo.id !== taskId);
+      setTodoList(newTodoList);
+    },
+    [todoList]
+  );
 
   const filteredTodoList = useMemo(
     () =>
