@@ -8,9 +8,10 @@ export type Todo = {
 
 interface Props {
   todoList: Todo[];
+  handleDelete: (id: number) => void;
 }
 
-const List: FC<Props> = ({ todoList }) => {
+const List: FC<Props> = ({ todoList, handleDelete }) => {
   useEffect(() => {
     console.log('Rendering <List />');
   });
@@ -18,7 +19,12 @@ const List: FC<Props> = ({ todoList }) => {
   return (
     <ul>
       {todoList.map((todo: Todo) => (
-        <MemoizedTask key={todo.id} id={todo.id} task={todo.task} />
+        <MemoizedTask
+          key={todo.id}
+          id={todo.id}
+          task={todo.task}
+          handleDelete={handleDelete}
+        />
       ))}
     </ul>
   );

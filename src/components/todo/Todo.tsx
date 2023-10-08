@@ -31,6 +31,11 @@ const Todos: FC = () => {
     setTask('');
   };
 
+  const handleDelete = (taskId: number) => {
+    const newTodoList = todoList.filter((todo: Todo) => todo.id !== taskId);
+    setTodoList(newTodoList);
+  };
+
   const filteredTodoList = useMemo(
     () =>
       todoList.filter((todo: Todo) => {
@@ -49,7 +54,7 @@ const Todos: FC = () => {
       />
       <button onClick={handleCreate}>Create</button>
       <button onClick={handleSearch}>Search</button>
-      <MemoizedList todoList={filteredTodoList} />
+      <MemoizedList todoList={filteredTodoList} handleDelete={handleDelete} />
     </>
   );
 };
