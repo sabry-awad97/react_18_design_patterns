@@ -1,8 +1,7 @@
 import './App.css';
-import Reducer from './components/reducer/Reducer';
 
 function App() {
-  return <Reducer />;
+  return <div>App</div>;
 }
 
 export default App;
